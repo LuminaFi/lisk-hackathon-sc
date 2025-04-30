@@ -260,7 +260,7 @@ contract IDRXTransferManager is AccessControl, ReentrancyGuard, Pausable {
     /**
      * @dev Set someone to be an operator
      */
-    function setAsOperator(address _userAddress) public onlyRole(OPERATOR_ROLE) {
+    function setAsOperator(address _userAddress) public onlyRole(ADMIN_ROLE) {
         require(_userAddress != address(0), "Invalid address");
 
         _grantRole(OPERATOR_ROLE, _userAddress);
