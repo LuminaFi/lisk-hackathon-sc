@@ -253,7 +253,7 @@ contract IDRXTransferManager is AccessControl, ReentrancyGuard, Pausable {
      * @dev Get the IDRX current reserve amount
      * @return The amount of IDRX current reserve
      */
-    function getCurrentReserveAmount() internal view returns (uint256) {
+    function getCurrentReserveAmount() public view returns (uint256) {
         return IERC20(idrxToken).balanceOf(address(this));
     }
 
